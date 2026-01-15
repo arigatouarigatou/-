@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>新海誠ヒロインズ - トップページ</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
 </head>
 
 <body>
@@ -21,107 +21,160 @@
         </nav>
     </header>
 
-    <section id="slideshow" class="slideshow-container">
-        <div class="mySlides fade">
-            <img src="image/君の名は。1.jpeg" alt="君の名は。のイメージ"
-                onerror="this.onerror=null; this.src='https://placehold.co/1200x400/3B82F6/ffffff?text=Image+1'">
-            <div class="slide-caption">宮水三葉 | 君の名は。</div>
-        </div>
-
-        <div class="mySlides fade">
-            <img src="image/天気の子 1.jpeg" alt="天気の子のイメージ"
-                onerror="this.onerror=null; this.src='https://placehold.co/1200x400/22C55E/ffffff?text=Image+2'">
-            <div class="slide-caption">天野陽菜 | 天気の子</div>
-        </div>
-
-        <div class="mySlides fade">
-            <img src="image/すずめの戸締まり 1.png" alt="すずめの戸締まりのイメージ"
-                onerror="this.onerror=null; this.src='https://placehold.co/1200x400/EF4444/ffffff?text=Image+3'">
-            <div class="slide-caption">岩戸鈴芽 | すずめの戸締まり</div>
-        </div>
-    </section>
-
     <main>
 
-        <section class="notice-grid">
-            <div class="notice-card">
-                <div class="notice-tag">NEW</div>
-                <div class="notice-image"><a href="heroines.html"><img src="" alt=""></a></div>
-                <h2>君の名はヒロイン</h2>
-                <p class="notice-date">2025.12.01</p>
+          <div class="form-container">
+        <h2>お問い合わせ</h2>
+        
+        <!-- フォーム送信先は仮で # にしています -->
+        <form action="#" method="post">
+            
+            <!-- ユーザーネーム -->
+            <div class="form-group">
+                <label for="username" class="field-label">ユーザーネーム</label>
+                <input type="text" id="username" name="username" placeholder="お名前を入力してください" required>
             </div>
 
-            <div class="notice-card">
-                <div class="notice-tag">NEW</div>
-                <div class="notice-image"><a href="heroines.html"><img src="" alt=""></a></div>
-                <h2>天気の子ヒロイン</h2>
-                <p class="notice-date">2025.11.29</p>
+            <!-- 作品名（ラジオボタン） -->
+            <div class="form-group">
+                <label class="field-label">作品名を選択</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="work_title" value="kiminona" checked>
+                        君の名は
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="work_title" value="tenkinoko">
+                        天気の子
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="work_title" value="suzume">
+                        すずめの戸締まり
+                    </label>
+                </div>
             </div>
 
-            <div class="notice-card">
-                <div class="notice-tag">NEW</div>
-                <div class="notice-image"><a href="heroines.html"><img src="" alt=""></a></div>
-                <h2>すずめの戸締まりヒロイン</h2>
-                <p class="notice-date">2025.11.29</p>
+            <!-- コメント -->
+            <div class="form-group">
+                <label for="comment" class="field-label">コメント</label>
+                <textarea id="comment" name="comment" placeholder="感想やお問い合わせ内容を入力してください"></textarea>
             </div>
-        </section>
 
+            <!-- 送信ボタン -->
+            <button type="submit" class="submit-btn">送信する</button>
 
-        <section class="notice-list">
-            <article class="notice">
-                <span class="date">公開日 2016.8.26</span>
-                <span class="topic">君の名は。</span>
-                <p class="description">公開から28日で100億突破</p>
-            </article>
-
-            <article class="notice">
-                <span class="date">公開日 2019.7.19</span>
-                <span class="topic">天気の子</span>
-                <p class="description">公開から34日で100億突破</p>
-            </article>
-
-            <article class="notice">
-                <span class="date">公開日 2022.11.11</span>
-                <span class="topic">すずめの戸締まり</span>
-                <p class="description">公開から45日で100億突破</p>
-            </article>
-
+        </form>
+    </div>
 
     </main>
-
-    <footer>
-        <p>&copy; 2024 Shinkai Heroines Fan Site</p>
-    </footer>
-
-    <script>
-        let slideIndex = 0;
-        let slides = [];
-
-        function showSlides() {
-            slides = document.getElementsByClassName("mySlides");
-            let nextIndex = (slideIndex + 1) % slides.length;
-
-            if (slides.length > 0) {
-                slides[slideIndex].style.opacity = 0;
-                slides[nextIndex].style.opacity = 1;
-                slideIndex = nextIndex;
-            }
-            setTimeout(showSlides, 4000);
-        }
-
-        window.onload = function () {
-            slides = document.getElementsByClassName("mySlides");
-            if (slides.length > 0) {
-                for (let i = 0; i < slides.length; i++) {
-                    slides[i].style.opacity = 0;
-                }
-                slides[0].style.opacity = 1;
-                slideIndex = 0;
-            }
-            setTimeout(showSlides, 4000);
-        }
-    </script>
 
 </body>
 
 </html>
+
+    <style>
+    
+
+        /* フォームのコンテナ（白い箱部分） */
+        .form-container {
+            background-color: #fff;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #444;
+            font-size: 24px;
+        }
+
+        /* 各入力エリアのグループ */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        /* ラベルのデザイン */
+        label.field-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* テキスト入力とテキストエリアのデザイン */
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box; /* パディングを含めた幅にする */
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus {
+            border-color: #66afe9;
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical; /* 縦方向のみサイズ変更可能 */
+            min-height: 120px;
+        }
+
+        /* ラジオボタンのグループデザイン */
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background-color: #fafafa;
+            padding: 15px;
+            border-radius: 4px;
+            border: 1px solid #eee;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .radio-option input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.2); /* ラジオボタンを少し大きく */
+            cursor: pointer;
+        }
+
+        /* 送信ボタンのデザイン */
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* スマートフォン向け調整 */
+        @media (max-width: 480px) {
+            .form-container {
+                padding: 20px;
+            }
+        }
+    </style>
