@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新海誠ヒロインズ - トップページ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">トップページ</a></li>
+                <li><a href="sakuhin.html">作品紹介ページ</a></li>
+                <li><a href="heroines.html">ヒロイン紹介ページ</a></li>
+                <li><a href="contact.html">お問い合わせページ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="slideshow" class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="image/君の名は。1.jpeg" alt="君の名は。のイメージ"
+                onerror="this.onerror=null; this.src='https://placehold.co/1200x400/3B82F6/ffffff?text=Image+1'">
+            <div class="slide-caption">宮水三葉 | 君の名は。</div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="image/天気の子 1.jpeg" alt="天気の子のイメージ"
+                onerror="this.onerror=null; this.src='https://placehold.co/1200x400/22C55E/ffffff?text=Image+2'">
+            <div class="slide-caption">天野陽菜 | 天気の子</div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="image/すずめの戸締まり 1.png" alt="すずめの戸締まりのイメージ"
+                onerror="this.onerror=null; this.src='https://placehold.co/1200x400/EF4444/ffffff?text=Image+3'">
+            <div class="slide-caption">岩戸鈴芽 | すずめの戸締まり</div>
+        </div>
+    </section>
+
+    <main>
+
+        <section class="notice-grid">
+            <div class="notice-card">
+                <div class="notice-tag">NEW</div>
+                <div class="notice-image"><a href="heroines.html"><img src="" alt=""></a></div>
+                <h2>君の名はヒロイン</h2>
+                <p class="notice-date">2025.12.01</p>
+            </div>
+
+            <div class="notice-card">
+                <div class="notice-tag">NEW</div>
+                <div class="notice-image"><a href="heroines.html"><img src="" alt=""></a></div>
+                <h2>天気の子ヒロイン</h2>
+                <p class="notice-date">2025.11.29</p>
+            </div>
+
+            <div class="notice-card">
+                <div class="notice-tag">NEW</div>
+                <div class="notice-image"><a href="heroines.html"><img src="" alt=""></a></div>
+                <h2>すずめの戸締まりヒロイン</h2>
+                <p class="notice-date">2025.11.29</p>
+            </div>
+        </section>
+
+
+        <section class="notice-list">
+            <article class="notice">
+                <span class="date">公開日 2016.8.26</span>
+                <span class="topic">君の名は。</span>
+                <p class="description">公開から28日で100億突破</p>
+            </article>
+
+            <article class="notice">
+                <span class="date">公開日 2019.7.19</span>
+                <span class="topic">天気の子</span>
+                <p class="description">公開から34日で100億突破</p>
+            </article>
+
+            <article class="notice">
+                <span class="date">公開日 2022.11.11</span>
+                <span class="topic">すずめの戸締まり</span>
+                <p class="description">公開から45日で100億突破</p>
+            </article>
+
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Shinkai Heroines Fan Site</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        let slides = [];
+
+        function showSlides() {
+            slides = document.getElementsByClassName("mySlides");
+            let nextIndex = (slideIndex + 1) % slides.length;
+
+            if (slides.length > 0) {
+                slides[slideIndex].style.opacity = 0;
+                slides[nextIndex].style.opacity = 1;
+                slideIndex = nextIndex;
+            }
+            setTimeout(showSlides, 4000);
+        }
+
+        window.onload = function () {
+            slides = document.getElementsByClassName("mySlides");
+            if (slides.length > 0) {
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.opacity = 0;
+                }
+                slides[0].style.opacity = 1;
+                slideIndex = 0;
+            }
+            setTimeout(showSlides, 4000);
+        }
+    </script>
+
+</body>
+
+</html>

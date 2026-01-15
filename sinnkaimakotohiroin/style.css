@@ -1,0 +1,402 @@
+/* 共通部分 */
+body {
+    background-color: #f0f8ff;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #1e90ff;
+    text-align: center;
+    margin: 30px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    background-color: #333;
+}
+
+nav li a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: white;
+}
+
+nav li a:hover {
+    background-color: #555;
+}
+
+main {
+    max-width: 1440px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 50px;
+    width: 100%;
+}
+
+/* =========================
+   トップページ用
+   ========================= */
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    height: 700px;
+}
+
+.mySlides {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.mySlides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mySlides:first-child {
+    opacity: 1;
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 1.5rem;
+}
+
+.notice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.notice-card {
+    background-color: #fffefc;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: relative;
+}
+
+.notice-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #c00;
+    color: white;
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.notice-image {
+    background-color: #ddd;
+    height: 150px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 1rem;
+    border-radius: 8px;
+}
+
+.notice-card h2 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.notice-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.notice-date {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 10px;
+    text-align: right;
+}
+
+
+/* =========================
+   作品紹介ページ用
+   ========================= */
+.work {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.work-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 30px;
+}
+
+.work-info {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.work-info img {
+    width: 100%;
+    max-width: 600px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.work-info p {
+    max-width: 600px;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.heroine-link {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.heroine-link a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heroine-link img {
+    width: 100%;
+    max-width: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    display: block;
+}
+
+.heroine-link img:hover {
+    transform: scale(1.05);
+}
+
+.heroine-link p {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+.notice-list {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.notice {
+    background-color: #fff;
+    border-left: 5px solid #80deea;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.notice .date {
+    font-weight: bold;
+    color: #00796b;
+}
+
+.notice .topic {
+    margin-left: 1rem;
+    font-style: italic;
+    color: #0097a7;
+}
+
+.description {
+    margin-top: 0.5rem;
+}
+
+.movie-intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+  flex-wrap: wrap; /* レスポンシブ対応 */
+}
+
+.movie-photo {
+  width: 250px;
+  height: 250px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.movie-text {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+}
+
+.movie-text h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.movie-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+
+/* =========================
+   レスポンシブ対応
+   ========================= */
+@media screen and (max-width: 1024px) {
+    .content-container {
+        gap: 32px;
+    }
+
+    .heroine-photos img {
+        max-height: 400px;
+    }
+
+    .work-content {
+        gap: 20px;
+    }
+
+    .work-info img,
+    .work-info p {
+        max-width: 500px;
+    }
+
+    .heroine-link img {
+        max-width: 180px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .slideshow-container {
+        height: 350px;
+    }
+
+    .slide-caption {
+        font-size: 1rem;
+        padding: 8px 0;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .heroine-photos {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .heroine-photos img {
+        max-width: 160px;
+        height: auto;
+    }
+
+    .top-links {
+        width: 90%;
+        justify-content: center;
+    }
+
+    .work-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .work-info {
+        flex: none;
+        text-align: center;
+    }
+
+    .work-info img,
+    .work-info p {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .heroine-link {
+        flex: none;
+        margin-top: 20px;
+    }
+
+    .heroine-link img {
+        max-width: 160px;
+        height: auto;
+    }
+
+    .heroine-link p {
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .notice {
+        padding: 0.5rem;
+    }
+
+    .description {
+        font-size: 0.9rem;
+    }
+    .notice-list{
+    display: block;
+    width: 100%;
+}
+}
